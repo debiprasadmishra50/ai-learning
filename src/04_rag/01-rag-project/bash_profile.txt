@@ -1,0 +1,9 @@
+export CLAUDE_API_KEY=Sk-kkAI-51bccbf7f2c7e0d9812b4d9f50ce4749219ca58574446f2259e679a7cec70ff6kk_2ssdhcpsqr3qbpuf-kkae5d0bce
+export GROQ_API_KEY=Sk-kkAI-51bccbf7f2c7e0d9812b4d9f50ce4749219ca58574446f2259e679a7cec70ff6kk_2ssdhcpsqr3qbpuf-kkae5d0bce
+export ALLOWED_MODELS=x-ai/grok-code-fast-1,openai/gpt-5-mini,moonshot/kimi-k2-0711-preview,openai/gpt-4.1-nano,google/gemini-2.5-flash-image-preview,deepseek/deepseek-chat,openai/gpt-4.1-mini,google/gemini-2.5-flash,moonshotai/kimi-k2-0905,deepseek/deepseek-reasoner,alibaba/qwen3-coder-plus,openai/gpt-5-nano
+export OPENAI_API_BASE=https://kodekey.ai.kodekloud.com/v1
+export AZURE_OPENAI_ENDPOINT=https://kodekey.ai.kodekloud.com/openai
+export OPENAI_API_KEY=Sk-kkAI-51bccbf7f2c7e0d9812b4d9f50ce4749219ca58574446f2259e679a7cec70ff6kk_2ssdhcpsqr3qbpuf-kkae5d0bce
+export GROQ_API_BASE=https://kodekey.ai.kodekloud.com
+export AZURE_OPENAI_API_KEY=Sk-kkAI-51bccbf7f2c7e0d9812b4d9f50ce4749219ca58574446f2259e679a7cec70ff6kk_2ssdhcpsqr3qbpuf-kkae5d0bce
+export CLAUDE_API_BASE=https://kodekey.ai.kodekloud.com
