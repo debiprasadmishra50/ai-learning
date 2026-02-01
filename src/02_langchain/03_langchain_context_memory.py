@@ -62,16 +62,23 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
 
 from dotenv import load_dotenv
+from pydantic import SecretStr
 
+# Add src directory to Python path for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from enums.ai_models import OpenAIModels
+from utils.separator import separator
 
-# Load environment variables
 load_dotenv()
+os.system("clear")
 
 # Safely load your API key from environment
-requesty_api_key = os.getenv("REQUESTY_API_KEY")
+api_key = os.getenv("REQUESTY_API_KEY")
+if not api_key:
+    raise ValueError("REQUESTY_API_KEY not found in environment variables.")
+requesty_api_key: SecretStr = SecretStr(api_key)
+llm: ChatOpenAI | None = None
 
 if not requesty_api_key:
     raise ValueError("REQUESTY_API_KEY not found in environment variables.")
@@ -80,6 +87,10 @@ if not requesty_api_key:
 # ==============================================================================
 # SECTION: Demonstrate the trim_message
 # ==============================================================================
+
+print(separator(100))
+print("LangChain Memory Migration: Modern Replacements for Deprecated Memory Classes")
+print(separator(30))
 
 
 def demonstrate_trim_messages():
@@ -135,7 +146,7 @@ def simple_trim_messages_chatbot():
     Simple chatbot demo using trim_messages as the modern replacement for ConversationBufferWindowMemory.
     This is the cleanest and most direct approach.
     """
-    print("\n" + "=" * 60)
+    print(separator(60))
     print("=== Simple trim_messages Chatbot Demo ===")
     print("This demonstrates the modern replacement for ConversationBufferWindowMemory")
     print("Type 'quit' to exit, 'memory' to see current memory")
@@ -294,7 +305,7 @@ def demo_different_window_sizes():
             conversation.append(HumanMessage(content=msg))
             conversation.append(AIMessage(content=response.content))
 
-            print(f"Turn {i+1}: {msg}")
+            print(f"Turn {i + 1}: {msg}")
             print(f"Bot: {response.content}")
 
             # Show what's in memory
@@ -553,7 +564,7 @@ def simple_summary_memory_chatbot():
 # Run the demos
 if __name__ == "__main__":
     # Demonstrate trim_messages first
-    # demonstrate_trim_messages()
+    demonstrate_trim_messages()
 
     # Run the chatbot demo
     # simple_trim_messages_chatbot()
@@ -565,4 +576,4 @@ if __name__ == "__main__":
     # simple_token_buffer_chatbot()
 
     # Run summary memory chatbot
-    simple_summary_memory_chatbot()
+    # simple_summary_memory_chatbot()

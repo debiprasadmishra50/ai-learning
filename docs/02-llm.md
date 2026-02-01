@@ -6,7 +6,7 @@ Large Language Models (LLMs) are built on advanced neural network architectures 
 
 - **Embedding Layer**: Converts tokens into dense vector representations, capturing semantic meaning.
 
-- **Transformer Blocks**: The core of LLMs, consisting of multiple layers of self-attention and feed-forward networks. These blocks enable the model to understand context and relationships between tokens.
+- **Transformer Blocks**: The core of LLMs, consisting of _multiple layers_ of _self-attention_ and _feed-forward networks_. These blocks enable the model to understand context and relationships between tokens.
 
 - **Positional Encoding**: Adds information about the position of tokens in the sequence, ensuring the model understands word order.
 
