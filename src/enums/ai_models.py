@@ -10,7 +10,7 @@ class OpenAIModels(str, Enum):
     Enum for OpenAI model names.
     """
 
-    gpt4o = "open ai/gpt-4o"
+    gpt4o = "openai/gpt-4o"
     """
     GPT-4.0 model identifier for OpenAI API.
     """

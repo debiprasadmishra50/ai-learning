@@ -118,7 +118,7 @@ wiki_agent = create_agent(
 )
 
 question = "Tom M. Mitchell is an American computer scientist. What book did he write?"
-print(f"Question: {question}")
+print(f"[+] Question: {question}")
 print("-" * 80)
 
 result = wiki_agent.invoke({"messages": [{"role": "user", "content": question}]})
