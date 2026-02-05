@@ -30,5 +30,10 @@ class OpenAIModels(str, Enum):
     Text Embedding 3 Small model identifier for OpenAI API.
     """
 
+    stt_gpt_4o_mini_transcribe = "openai/gpt-4o-mini-transcribe"
+    """
+    GPT-4o-Mini-Transcribe model identifier for OpenAI API.
+    """
+
     def __str__(self):
         return self.value

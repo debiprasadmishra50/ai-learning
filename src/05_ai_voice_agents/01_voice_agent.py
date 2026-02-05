@@ -88,7 +88,7 @@ logger = logging.getLogger("dlai-agent")
 load_dotenv()
 llm_model = os.getenv("OPENAI_MODEL", "openai/gpt-5-nano")
 requesty_api_key = os.getenv("REQUESTY_API_KEY")
-stt_model = os.getenv("STT_MODEL", "openai/whisper-1")
+stt_model = os.getenv("STT_MODEL", "STT_MODEL=openai/gpt-4o-mini-transcribe")
 
 os.system("clear")
 logger.log(logging.INFO, "Starting AGENT")
