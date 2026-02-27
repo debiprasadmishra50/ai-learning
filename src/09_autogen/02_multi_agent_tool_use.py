@@ -35,7 +35,7 @@ model_client = OpenAIChatCompletionClient(
 
 
 def get_weather(city: str) -> str:  # Async tool is possible too.
-    return f"The weather in {city} is 72 degree and sunny."
+    return f"The weather in {city} is 72 degree and sunny."  # can be a API call to openweather or similar service to fetch the actual data
 
 
 async def tool_use() -> None:

@@ -40,7 +40,7 @@ This project contains the code and docs for the AI & LLM workshop.
 To make the project ready to run, first create a virtual environment. To activate it:
 
 ```bash
-python -m venv venv
+python -m venv .venv
 ```
 
 ```bash
