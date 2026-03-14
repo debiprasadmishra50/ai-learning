@@ -24,7 +24,7 @@ print("=" * 60)
 model, collection, chunks = setup_rag_pipeline("precision_eval")
 
 # ============================================================================
-# SECTION 3: IMPLEMENT PRECISION@K
+# SECTION 2: IMPLEMENT PRECISION@K
 # ============================================================================
 
 def precision_at_k(retrieved_docs: list, relevant_docs: list, k: int) -> float:
@@ -61,7 +61,7 @@ def precision_at_k(retrieved_docs: list, relevant_docs: list, k: int) -> float:
 
 
 # ============================================================================
-# SECTION 4: REAL RAG EVALUATION
+# SECTION 3: REAL RAG EVALUATION
 # ============================================================================
 
 print("\n" + "=" * 60)

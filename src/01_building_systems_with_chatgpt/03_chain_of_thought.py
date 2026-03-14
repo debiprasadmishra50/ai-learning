@@ -1,6 +1,13 @@
 """
 This script demonstrates a chain-of-thought prompt for answering customer queries about specific products using an LLM.
 It defines a multi-step system prompt, sends user queries to the LLM, and prints the step-by-step reasoning and response.
+
+Chain Of thought:
+    - Step 1: Identify if the user is asking about a specific product or products.
+    - Step 2: If the user is asking about a specific product or products, identify whether the products are in the list of available products.
+    - Step 3: If the message contains products in the list above, list any assumptions that the user is making in their message.
+    - Step 4: If the user made any assumptions, figure out whether the assumption is true based on your product information.
+    - Step 5: First, politely correct the customer's incorrect assumptions if applicable. Only mention or reference products in the list of 5 available products, as these are the only 5 products that the store sells. Answer the customer in a friendly tone.
 """
 
 import os

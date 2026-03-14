@@ -188,6 +188,12 @@ def simple_trim_messages_chatbot():
     while True:
         user_input = input("\nYou: ").strip()
 
+        """ 
+        Handle commands
+        - quit: exit the chatbot
+        - memory: show current memory
+        - empty input: ignore
+        """
         if user_input.lower() == "quit":
             print("Goodbye!")
             break
@@ -208,6 +214,13 @@ def simple_trim_messages_chatbot():
         elif not user_input:
             continue
 
+        """ 
+        Get AI response with trimmed context
+        - Get trimmed history for context
+        - Get AI response with trimmed context
+        - Add both messages to full history
+        - Show memory status
+        """
         try:
             # Get trimmed history for context (this is the key part!)
             trimmed_history = trim_messages(
@@ -252,7 +265,14 @@ def demo_different_window_sizes():
     print("\n" + "=" * 60)
     print("=== Window Size Comparison Demo ===")
 
+    """ 
+    Initialize LLM
+    - Initialize LLM
+    - Create prompt template
+    - Create chain
+    """
     try:
+        # Initialize LLM
         llm = ChatOpenAI(
             api_key=requesty_api_key,
             base_url="https://router.requesty.ai/v1",
@@ -263,6 +283,7 @@ def demo_different_window_sizes():
         print(f"Error initializing LLM: {e}")
         return
 
+    # Create prompt template
     prompt = ChatPromptTemplate.from_messages(
         [
             ("system", "You are a helpful assistant."),
@@ -270,6 +291,8 @@ def demo_different_window_sizes():
             ("human", "{input}"),
         ]
     )
+
+    # Create chain
     chain = prompt | llm
 
     # Test conversation
@@ -341,8 +364,14 @@ def simple_token_buffer_chatbot():
     print("Type 'quit' to exit, 'memory' to see current memory")
     print("-" * 60)
 
-    # Initialize LLM
+    """ 
+    Initialize LLM
+    - Initialize LLM
+    - Create prompt template
+    - Create chain
+    """
     try:
+        # Initialize LLM
         llm = ChatOpenAI(
             api_key=requesty_api_key,
             base_url="https://router.requesty.ai/v1",
@@ -379,6 +408,14 @@ def simple_token_buffer_chatbot():
 
     print(f"Chatbot initialized with token limit: {MAX_TOKENS} tokens")
 
+    """ 
+    Chat loop
+    - Get user input
+    - Handle commands
+    - Get AI response with trimmed context
+    - Add both messages to full history
+    - Show memory status
+    """
     while True:
         user_input = input("\nYou: ").strip()
 
@@ -454,8 +491,14 @@ def simple_summary_memory_chatbot():
     print("Type 'quit' to exit, 'memory' to see current memory")
     print("-" * 60)
 
-    # Initialize LLM
+    """ 
+    Initialize LLM
+    - Initialize LLM
+    - Create prompt template
+    - Create chain
+    """
     try:
+        # Initialize LLM
         llm = ChatOpenAI(
             api_key=requesty_api_key,
             base_url="https://router.requesty.ai/v1",
@@ -486,7 +529,20 @@ def simple_summary_memory_chatbot():
     print(f"Chatbot initialized with message limit: {MAX_MESSAGES} messages")
     print("Older messages will be summarized to save memory")
 
+    """ 
+    Chat loop
+    - Get user input
+    - Handle commands
+    - Get AI response with trimmed context
+    - Add both messages to full history
+    - Show memory status
+    """
     while True:
+        """ 
+        Get user input
+        - Get user input
+        - Handle commands
+        """
         user_input = input("\nYou: ").strip()
 
         if user_input.lower() == "quit":
@@ -508,6 +564,13 @@ def simple_summary_memory_chatbot():
         elif not user_input:
             continue
 
+        """ 
+        Get AI response with trimmed context
+        - Prepare history for the LLM
+        - Get AI response
+        - Add both messages to full history
+        - Show memory status
+        """
         try:
             # Prepare history for the LLM
             history_for_llm = []

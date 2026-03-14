@@ -25,7 +25,12 @@ from utils.get_env import get_env_variables  # type: ignore
 os.system("clear")
 envs = get_env_variables()
 
-
+""" 
+    Group Chat
+    - This is used to create a group chat with multiple agents.
+    - The group chat will alternate between the agents until a termination condition is met.
+    - The termination condition is a text termination, which will cause the chat to terminate when the text "APPROVE" is received.
+"""
 async def main() -> None:
     model_client = OpenAIChatCompletionClient(
         base_url="https://router.requesty.ai/v1",

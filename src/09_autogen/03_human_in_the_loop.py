@@ -31,7 +31,12 @@ model_client = OpenAIChatCompletionClient(
     },
 )
 
-
+""" 
+    User Proxy Agent
+    - This agent is used to get user input from the console.
+    - It is used in conjunction with the Assistant Agent.
+    - The Assistant Agent will handoff to the User Proxy Agent when it needs user input.
+"""
 async def user_proxy() -> None:
     # Create the agents.
     assistant = AssistantAgent("assistant", model_client=model_client)
@@ -62,6 +67,13 @@ async def user_proxy() -> None:
     await model_client.close()
 
 
+""" 
+    Max Turns
+    - This is used to limit the number of turns in a conversation.
+    - It is used in conjunction with the Assistant Agent.
+    - The Assistant Agent will handoff to the User Proxy Agent when it needs user input.
+    - The User Proxy Agent will handoff to the Assistant Agent when it needs to continue the conversation.
+"""
 async def max_turns() -> None:
     assistant = AssistantAgent("assistant", model_client=model_client)
 
@@ -83,6 +95,13 @@ async def max_turns() -> None:
     await model_client.close()
 
 
+""" 
+    Termination Condition
+    - This is used to end a conversation based on a condition.
+    - It is used in conjunction with the Assistant Agent.
+    - The Assistant Agent will handoff to the User Proxy Agent when it needs user input.
+    - The User Proxy Agent will handoff to the Assistant Agent when it needs to continue the conversation.
+"""
 async def with_termination_condition() -> None:
     # Create a lazy assistant agent that always hands off to the user.
     lazy_agent = AssistantAgent(

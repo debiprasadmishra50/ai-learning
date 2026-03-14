@@ -82,6 +82,13 @@ def calculator(expression: str) -> str:
 print("[+] Testing calculator tool:")
 print(f"[+] 25% of 300 = {calculator.invoke('0.25 * 300')}\n")
 
+""" 
+    Create agent with calculator
+    - The agent will use the calculator tool.
+    - The agent will be used to answer math questions.
+    - The agent will be tested with the question "What is 25% of 300?".
+    - The agent will return the answer.
+"""
 # Create agent with calculator
 agent = create_agent(
     model=llm,

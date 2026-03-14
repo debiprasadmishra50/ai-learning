@@ -71,6 +71,7 @@ print(prompt_template.messages[0].prompt.input_variables, end="\n" * 2)  # type:
 print("All Input Variables:")
 print(prompt_template.input_variables, end="\n" * 2)
 
+
 ##########################################################################
 # EXAMPLE 2
 ##########################################################################
@@ -109,6 +110,8 @@ print(separator(100))
 
 print("\nEXAMPLE 3")
 print(separator(30))
+
+
 ##########################################################################
 # EXAMPLE 3
 ##########################################################################
