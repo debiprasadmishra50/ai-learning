@@ -223,16 +223,16 @@ def sequentialchain_demo():
     # Test
     result = execute_sequential_chain(SAMPLE_REVIEW)
 
-    print(separator(60))
+    print(separator(count=60))
 
     print(type(result), end="\n")
     print(result)
-    print(separator(60))
+    print(separator(count=60))
 
     print("JSON result:")
     print(json.dumps(result, indent=2))
 
-    print(separator(60))
+    print(separator(count=60))
 
 
 ##########################################################################

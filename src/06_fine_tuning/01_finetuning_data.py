@@ -20,7 +20,7 @@ filename = os.path.join(os.path.dirname(__file__), "data", "lamini_docs.jsonl")
 instruction_dataset_df = pd.read_json(filename, lines=True)
 print(instruction_dataset_df.head(10))
 
-print(separator(80))
+print(separator(count=80))
 print("[+] Convert the DataFrame to a dictionary....")
 examples = instruction_dataset_df.to_dict()
 
@@ -38,7 +38,7 @@ text = examples["question"][0] + examples["answer"][0]
 print(text)
 
 
-print(separator(80))
+print(separator(count=80))
 # PROMPT TEMPLATES
 prompt_template_qa = """### Question:
 {question}
@@ -53,7 +53,7 @@ text_with_prompt_template = prompt_template_qa.format(question=question, answer=
 print("[+] Example Prompt...")
 print(text_with_prompt_template)
 
-print(separator(80))
+print(separator(count=80))
 # PROMPT TEMPLATES
 prompt_template_q = """### Question:
 {question}
@@ -62,7 +62,7 @@ prompt_template_q = """### Question:
 
 num_examples = len(examples["question"])
 print(f"[+] Number of examples: {num_examples}")
-print(separator(80))
+print(separator(count=80))
 
 finetuning_dataset_text_only = []
 finetuning_dataset_question_answer = []
@@ -83,11 +83,11 @@ for i in range(num_examples):
 print("[+] Example of text only dataset...")
 pprint(finetuning_dataset_text_only[0])
 
-print(separator(80))
+print(separator(count=80))
 print("[+] Example of Quention Answer Format...")
 pprint(finetuning_dataset_question_answer[0])
 
-print(separator(80))
+print(separator(count=80))
 
 # Save the dataset
 print("[+] Saving the dataset...")

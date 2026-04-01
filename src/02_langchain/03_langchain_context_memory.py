@@ -88,9 +88,9 @@ if not requesty_api_key:
 # SECTION: Demonstrate the trim_message
 # ==============================================================================
 
-print(separator(100))
+print(separator(count=100))
 print("LangChain Memory Migration: Modern Replacements for Deprecated Memory Classes")
-print(separator(30))
+print(separator(count=30))
 
 
 def demonstrate_trim_messages():
@@ -146,7 +146,7 @@ def simple_trim_messages_chatbot():
     Simple chatbot demo using trim_messages as the modern replacement for ConversationBufferWindowMemory.
     This is the cleanest and most direct approach.
     """
-    print(separator(60))
+    print(separator(count=60))
     print("=== Simple trim_messages Chatbot Demo ===")
     print("This demonstrates the modern replacement for ConversationBufferWindowMemory")
     print("Type 'quit' to exit, 'memory' to see current memory")

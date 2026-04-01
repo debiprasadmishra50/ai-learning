@@ -83,9 +83,9 @@ retriever = vectorDB.as_retriever()
 def lecl_chain():
     query = "Please list all your shirts with sun protection in a table in markdown and summarize each one."
 
-    print(separator(60))
+    print(separator(count=60))
     print("METHOD 1: LCEL CHAIN")
-    print(separator(60))
+    print(separator(count=60))
 
     # Define a prompt template
     lcel_prompt = ChatPromptTemplate.from_template(
@@ -117,10 +117,10 @@ def lecl_chain():
     # Run the chain
     response = lcel_chain.invoke(query)
     print("RESPONSE FROM LCEL CHAIN:")
-    print(separator(60))
+    print(separator(count=60))
     console = Console()
     console.print(Markdown(response))
-    print(separator(60))
+    print(separator(count=60))
 
 
 ##########################################################################
@@ -131,9 +131,9 @@ def step_by_step_approach():
     assert llm is not None, "Chat model not initialized"
     assert embeddings is not None, "Embeddings not initialized"
 
-    print(separator(60))
+    print(separator(count=60))
     print("METHOD 2: Step By Step Approach")
-    print(separator(60))
+    print(separator(count=60))
 
     # ✅ Test embeddings
     print("[+] Testing embeddings...")
@@ -142,7 +142,7 @@ def step_by_step_approach():
     print(f"[+] First 5 values: {embed[:5]}\n")
 
     # ✅ Perform similarity search
-    print(separator(60))
+    print(separator(count=60))
     print("[+] Performing similarity search...")
     query_similarity = "Please suggest a shirt with sunblocking"
     similar_docs = vectorDB.similarity_search(query_similarity)
@@ -150,7 +150,7 @@ def step_by_step_approach():
     print(f"[+] Most similar document: {similar_docs[0]}\n")
 
     # ✅ Create retriever
-    print(separator(60))
+    print(separator(count=60))
     print("[+] Creating retriever...")
     retriever = vectorDB.as_retriever()
     print(retriever.invoke(query_similarity))
@@ -186,9 +186,9 @@ def step_by_step_approach():
 
     # ✅ Run the chain
     response = lcel_chain.invoke(query)
-    print(separator(60))
+    print(separator(count=60))
     print("RESPONSE FROM LCEL CHAIN:")
-    print(separator(60))
+    print(separator(count=60))
     console = Console()
     console.print(Markdown(response))
 

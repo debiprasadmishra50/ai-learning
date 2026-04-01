@@ -75,9 +75,9 @@ print(prompt_template.input_variables, end="\n" * 2)
 ##########################################################################
 # EXAMPLE 2
 ##########################################################################
-print(separator(100))
+print(separator(count=100))
 print("\nEXAMPLE 2")
-print(separator(30))
+print(separator(count=30))
 customer_style = """American English \
 in a calm and respectful tone
 """
@@ -99,17 +99,17 @@ print(type(customer_messages), end="\n" * 2)
 print(type(customer_messages[0]), end="\n" * 2)
 
 print(customer_messages[0], end="\n" * 2)
-print(separator(100))
+print(separator(count=100))
 
 ##########################################################################
 # MAKE THE LLM CALL
 ##########################################################################
 customer_response = chat.invoke(customer_messages)
 print(customer_response.content, end="\n")
-print(separator(100))
+print(separator(count=100))
 
 print("\nEXAMPLE 3")
-print(separator(30))
+print(separator(count=30))
 
 
 ##########################################################################
@@ -137,9 +137,9 @@ print(service_response.content, end="\n")
 ##########################################################################
 # EXAMPLE 4
 ##########################################################################
-print(separator(100))
+print(separator(count=100))
 print("\nEXAMPLE 4")
-print(separator(30))
+print(separator(count=30))
 
 customer_review = """\
 This leaf blower is pretty amazing.  It has four settings:\
@@ -213,9 +213,9 @@ print(format_instructions, end="\n" * 2)
 ##########################################################################
 # EXAMPLE 5
 ##########################################################################
-print(separator(100))
+print(separator(count=100))
 print("\nEXAMPLE 5")
-print(separator(30))
+print(separator(count=30))
 review_template_2 = """\
 For the following text, extract the following information:
 
@@ -241,9 +241,9 @@ messages = prompt_template.format_messages(
     text=customer_review, format_instructions=format_instructions
 )
 print("[+] Messages:")
-print(separator(30))
+print(separator(count=30))
 print(messages[0].content, end="\n\n")
-print(separator(30))
+print(separator(count=30))
 
 # ✅ Make the LLM call
 response = chat.invoke(messages, temperature=0.0)

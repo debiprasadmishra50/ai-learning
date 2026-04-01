@@ -81,7 +81,7 @@ def qna_chatbot():
         | StrOutputParser()
     )
     print(chain.invoke(question))
-    print(separator(80))
+    print(separator(count=80))
 
 
 if __name__ == "__main__":

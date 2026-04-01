@@ -105,9 +105,9 @@ print("[+] QA system created successfully\n")
 ##########################################################################
 # HARD-CODED Examples
 ##########################################################################
-print(separator(80))
+print(separator(count=80))
 print("[+] CREATING EVALUATION EXAMPLES")
-print(separator(80))
+print(separator(count=80))
 
 examples = [
     {
@@ -175,9 +175,9 @@ print(f"[+] Total examples: {len(examples)}\n")
 # TEST THE QA SYSTEM
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] TESTING QA SYSTEM")
-print(separator(80))
+print(separator(count=80))
 
 if examples:
     test_query = examples[0]["query"]
@@ -189,9 +189,9 @@ if examples:
 # MANUAL EVALUATION WITH DEBUG MODE
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] MANUAL EVALUATION (DEBUG MODE)")
-print(separator(80))
+print(separator(count=80))
 
 # In LangChain 1.2.7, we use set_debug instead of langchain.debug
 # from langchain_core.globals import set_debug, set_verbose
@@ -214,9 +214,9 @@ print("[+] Debug mode turned OFF\n")
 # GENERATE PREDICTIONS FOR ALL EXAMPLES
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] GENERATING PREDICTIONS FOR ALL EXAMPLES")
-print(separator(80))
+print(separator(count=80))
 
 predictions = []
 for i, example in enumerate(examples):
@@ -243,9 +243,9 @@ print(f"\n[+] Generated {len(predictions)} predictions\n")
 # LLM-ASSISTED EVALUATION
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] LLM-ASSISTED EVALUATION")
-print(separator(80))
+print(separator(count=80))
 
 
 # Create evaluation chain
@@ -275,9 +275,9 @@ for i, pred in enumerate(predictions):
         graded_outputs.append({"text": f"Error: {str(e)}"})
         print(f"[-] Error grading {i + 1}: {e}")
 
-print(separator(80))
+print(separator(count=80))
 print("EVALUATION RESULTS")
-print(separator(80))
+print(separator(count=80))
 
 # Display results
 for i, eg in enumerate(examples[: len(predictions)]):
@@ -294,9 +294,9 @@ for i, eg in enumerate(examples[: len(predictions)]):
 # SUMMARY STATISTICS
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("SUMMARY STATISTICS")
-print(separator(80))
+print(separator(count=80))
 
 correct_count = sum(
     1
@@ -311,6 +311,6 @@ print(f"[+] Correct: {correct_count}")
 print(f"[+] Incorrect: {total_count - correct_count}")
 print(f"[+] Accuracy: {accuracy:.1f}%")
 
-print(separator(80))
+print(separator(count=80))
 print("[+] EVALUATION COMPLETE")
-print(separator(80))
+print(separator(count=80))

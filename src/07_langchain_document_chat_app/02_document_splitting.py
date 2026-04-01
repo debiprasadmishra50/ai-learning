@@ -57,7 +57,7 @@ chunk_overlap = 4
 def chunking():
     print(f"[+] Chunk size: {chunk_size}, Chunk overlap: {chunk_overlap}")
 
-    print(separator(80))
+    print(separator(count=80))
 
     # Initialize the splitters
     r_splitter = RecursiveCharacterTextSplitter(
@@ -73,18 +73,18 @@ def chunking():
 
     print(f"[+] Text 1: |{text1}|")
     print(f"[+] Text 2: |{text2}|")
-    print(separator(80))
+    print(separator(count=80))
     print(f"[+] Recursive Splitter: {r_splitter.split_text(text1)}")
     print(f"[+] Recursive Splitter: {r_splitter.split_text(text2)}")
 
-    print(separator(80))
+    print(separator(count=80))
 
     text3 = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
     print(f"[+] Text 3: |{text3}|")
     print(f"[+] Recursive Splitter: {r_splitter.split_text(text3)}")
     print(f"[+] Character Splitter: {c_splitter.split_text(text3)}")
 
-    print(separator(80))
+    print(separator(count=80))
 
     c_splitter = CharacterTextSplitter(
         chunk_size=chunk_size, chunk_overlap=chunk_overlap, separator=" "
@@ -92,7 +92,7 @@ def chunking():
     print(f'[+] Character Splitter with " " separator: {c_splitter.split_text(text3)}')
     print(c_splitter.split_text(text3))
 
-    print(separator(80))
+    print(separator(count=80))
 
 
 ##########################################################################
@@ -118,21 +118,21 @@ def sentence_chunking():
     )
 
     print(c_splitter.split_text(some_text))
-    print(separator(80))
+    print(separator(count=80))
     print(r_splitter.split_text(some_text))
-    print(separator(80))
+    print(separator(count=80))
 
     r_splitter = RecursiveCharacterTextSplitter(
         chunk_size=150, chunk_overlap=0, separators=["\n\n", "\n", ". ", " ", ""]
     )
     print(r_splitter.split_text(some_text))
-    print(separator(80))
+    print(separator(count=80))
 
     r_splitter = RecursiveCharacterTextSplitter(
         chunk_size=150, chunk_overlap=0, separators=["\n\n", "\n", "?<=. ", " ", ""]
     )
     print(r_splitter.split_text(some_text))
-    print(separator(80))
+    print(separator(count=80))
 
 
 ##########################################################################
@@ -158,7 +158,7 @@ def pdf_chunking():
     print(f"[+] Total Document Pages: {len(pages)}")
     print("[+] First document content:")
     print(f"{docs[0].page_content[:2000]}...")
-    print(separator(80))
+    print(separator(count=80))
 
 
 ##########################################################################
@@ -174,13 +174,13 @@ def tokentext_splitting():
     text_splitter = TokenTextSplitter(chunk_size=1, chunk_overlap=0)
     text1 = "foo bar bazzyfoo"
     print(text_splitter.split_text(text1))
-    print(separator(80))
+    print(separator(count=80))
 
     text_splitter = TokenTextSplitter(chunk_size=10, chunk_overlap=0)
     docs = text_splitter.split_documents(pages)
     print(f"[+] Number of documents: {len(docs)}")
     print(docs[0])
-    print(separator(80))
+    print(separator(count=80))
     print(docs[0].metadata)
 
 
@@ -210,9 +210,9 @@ Hi this is Molly"""
     )
     md_header_splits = markdown_splitter.split_text(markdown_document)
     print(md_header_splits[0])
-    print(separator(80))
+    print(separator(count=80))
     print(md_header_splits[1])
-    print(separator(80))
+    print(separator(count=80))
 
 
 if __name__ == "__main__":

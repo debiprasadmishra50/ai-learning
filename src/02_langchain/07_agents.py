@@ -53,17 +53,17 @@ except Exception as e:
 # ✅ ASSERTION
 assert llm is not None, "Chat model not initialized"
 
-print(separator(80))
+print(separator(count=80))
 print("[+] LANGCHAIN AGENTS - UPDATED FOR 1.2.7")
-print(separator(80))
+print(separator(count=80))
 
 # ============================================================================
 # EXAMPLE 1: SIMPLE CALCULATOR AGENT
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] EXAMPLE 1: CALCULATOR TOOL")
-print(separator(80))
+print(separator(count=80))
 
 
 @tool
@@ -109,9 +109,9 @@ print(f"\n[+] Answer: {result['messages'][-1].content}\n")
 # EXAMPLE 2: WIKIPEDIA AGENT
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] EXAMPLE 2: WIKIPEDIA TOOL")
-print(separator(80))
+print(separator(count=80))
 
 wikipedia = WikipediaQueryRun(
     api_wrapper=WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max=500)  # type: ignore
@@ -136,9 +136,9 @@ print(f"\n[+] Answer: {result['messages'][-1].content}\n")
 # EXAMPLE 3: CUSTOM DATE TOOL
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] EXAMPLE 3: CUSTOM TOOL - DATE FUNCTION")
-print(separator(80))
+print(separator(count=80))
 
 
 @tool
@@ -172,9 +172,9 @@ print(f"\n[+] Answer: {result['messages'][-1].content}\n")
 # EXAMPLE 4: STRUCTURED OUTPUT
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] EXAMPLE 4: STRUCTURED OUTPUT")
-print(separator(80))
+print(separator(count=80))
 
 
 class ContactInfo(BaseModel):
@@ -212,9 +212,9 @@ if contact:
 # EXAMPLE 5: STREAMING
 # ============================================================================
 
-print(separator(80))
+print(separator(count=80))
 print("[+] EXAMPLE 5: STREAMING AGENT RESPONSES")
-print(separator(80))
+print(separator(count=80))
 
 print("[+] Streaming agent response:")
 print("-" * 80)
@@ -236,9 +236,9 @@ print()
 # EXAMPLE 6: PYTHON CODE EXECUTION (if you have langchain-experimental)
 # ============================================================================
 
-# print(separator(80))
+# print(separator(count=80))
 # print("[+] EXAMPLE 6: PYTHON CODE EXECUTION (OPTIONAL)")
-# print(separator(80))
+# print(separator(count=80))
 
 # try:
 #     from langchain_experimental.tools import PythonREPLTool

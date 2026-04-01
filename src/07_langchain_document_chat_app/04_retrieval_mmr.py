@@ -47,13 +47,13 @@ for loader in loaders:
     docs.extend(loader.load())
 
 print(f"[+] Number of documents: {len(docs)}")
-print(separator(80))
+print(separator(count=80))
 
 # Split
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=150)
 splits = text_splitter.split_documents(docs)
 print(f"[+] Number of splits: {len(splits)}")
-print(separator(80))
+print(separator(count=80))
 
 
 ##########################################################################
@@ -72,11 +72,11 @@ def embeddings_openai():
     embedding3 = embeddings.embed_query(sentence3)
 
     print(np.dot(embedding1, embedding2))
-    print(separator(80))
+    print(separator(count=80))
     print(np.dot(embedding1, embedding3))
-    print(separator(80))
+    print(separator(count=80))
     print(np.dot(embedding2, embedding3))
-    print(separator(80))
+    print(separator(count=80))
 
 
 ##########################################################################
@@ -107,7 +107,7 @@ def vector_embeddings():
     for doc in docs:
         print(doc.page_content)
 
-    print(separator(80))
+    print(separator(count=80))
 
     # Failure Case
     question = "what did they say about matlab?"
@@ -116,7 +116,7 @@ def vector_embeddings():
     for doc in docs:
         print(doc.metadata)
 
-    print(separator(80))
+    print(separator(count=80))
 
     question = "what did they say about regression in the third lecture?"
     docs = vectordb.similarity_search(question, k=3)
@@ -124,7 +124,7 @@ def vector_embeddings():
     for doc in docs:
         print(doc.metadata)
 
-    print(separator(80))
+    print(separator(count=80))
 
     return vectordb
 

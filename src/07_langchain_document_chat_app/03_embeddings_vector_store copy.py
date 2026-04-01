@@ -61,10 +61,10 @@ def mmr_search():
     print(f"Question: {question}\n")
 
     print(smalldb.similarity_search(question, k=2))
-    print(separator(80))
+    print(separator(count=80))
 
     print(smalldb.max_marginal_relevance_search(question, k=2, fetch_k=3))
-    print(separator(80))
+    print(separator(count=80))
 
     question = "what did they say about matlab?"
     print(f"Question: {question}\n")
@@ -72,16 +72,16 @@ def mmr_search():
     docs_ss = vectordb.similarity_search(question, k=3)
     print(f"[+] Similarity Search: Found {len(docs_ss)} similar documents\n")
     print(docs_ss[0].page_content[:100])
-    print(separator(80))
+    print(separator(count=80))
     print(docs_ss[1].page_content[:100])
-    print(separator(80))
+    print(separator(count=80))
 
     docs_mmr = vectordb.max_marginal_relevance_search(question, k=3)
     print(f"[+] MMR: Found {len(docs_mmr)} similar documents\n")
     print(docs_mmr[0].page_content[:100])
-    print(separator(80))
+    print(separator(count=80))
     print(docs_mmr[1].page_content[:100])
-    print(separator(80))
+    print(separator(count=80))
 
     # SELF QUERY
     print("[+] Self Query\n")
@@ -97,10 +97,10 @@ def mmr_search():
     )
     print(f"[+] Similarity Search: Found {len(docs)} similar documents\n")
     # print(docs[0].page_content[:100])
-    # print(separator(80))
+    # print(separator(count=80))
     for d in docs:
         print(d.metadata)
-    print(separator(80))
+    print(separator(count=80))
 
 
 if __name__ == "__main__":

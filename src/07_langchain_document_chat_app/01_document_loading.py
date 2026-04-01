@@ -57,13 +57,13 @@ def load_pdf_document():
     loader = PyPDFLoader(filepath)
     pages = loader.load()
     print(f"[=] Number of pages: {len(pages)} in {filepath}")
-    print(separator(80))
+    print(separator(count=80))
     print("[+] First page content:")
     print(f"{pages[0].page_content[:300]}...")
-    print(separator(80))
+    print(separator(count=80))
     print("[+] First page metadata:")
     print(pages[0].metadata)
-    print(separator(80))
+    print(separator(count=80))
 
 
 ##########################################################################
@@ -85,13 +85,13 @@ def load_youtube_video():
     )
     docs = loader.load()
     print(f"[+] Number of documents: {len(docs)}")
-    print(separator(80))
+    print(separator(count=80))
     if docs:
         print("[+] First document content:")
         print(f"{docs[0].page_content[:300]}...")
     else:
         print("[-] No documents were loaded.")
-    print(separator(80))
+    print(separator(count=80))
 
 
 ##########################################################################
@@ -102,13 +102,13 @@ def load_web_url():
     loader = WebBaseLoader(url)
     docs = loader.load()
     print(f"[+] Number of documents: {len(docs)}")
-    print(separator(80))
+    print(separator(count=80))
     if docs:
         print("[+] First document content:")
         print(f"{docs[0].page_content[:300]}...")
     else:
         print("[-] No documents were loaded.")
-    print(separator(80))
+    print(separator(count=80))
 
 
 ##########################################################################
@@ -119,16 +119,16 @@ def notion_loader():
     loader = NotionDirectoryLoader(filepath)
     docs = loader.load()
     print(f"[+] Number of documents: {len(docs)}")
-    print(separator(80))
+    print(separator(count=80))
     if docs:
         print("[+] First document content:")
         print(f"{docs[0].page_content[:300]}...")
-        print(separator(80))
+        print(separator(count=80))
         print("[+] First document metadata:")
         print(docs[0].metadata)
     else:
         print("[-] No documents were loaded.")
-    print(separator(80))
+    print(separator(count=80))
 
 
 if __name__ == "__main__":

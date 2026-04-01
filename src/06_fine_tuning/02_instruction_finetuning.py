@@ -31,7 +31,7 @@ top_m = list(itertools.islice(instruction_tuned_dataset, m))
 for j in top_m:
     print(j)
 
-print(separator(80))
+print(separator(count=80))
 
 # 2 PROMPT TEMPLATES
 prompt_template_with_input = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
@@ -69,7 +69,7 @@ for j in top_m:
 print("[+] Example of processed data...")
 pprint(processed_data[0])
 
-print(separator(80))
+print(separator(count=80))
 
 # Save the dataset
 print("[+] Saving the dataset...")
@@ -80,24 +80,24 @@ with jsonlines.open(
 
 print("[+] Dataset saved!")
 
-print(separator(80))
+print(separator(count=80))
 # Compare non-instruction tuned vs instruction tuned models
 print("[+] Comparing non-instruction tuned and instruction tuned models...")
 dataset_path_hf = "lamini/alpaca"
 dataset_hf = load_dataset(dataset_path_hf)
 print(dataset_hf)
 
-print(separator(80))
+print(separator(count=80))
 non_instruct_model = BasicModelRunner("meta-llama/Llama-2-7b-hf")
 non_instruct_output = non_instruct_model("Tell me how to train my dog to sit")
 print("Not instruction-tuned output (Llama 2 Base):", non_instruct_output)
 
-print(separator(80))
+print(separator(count=80))
 instruct_model = BasicModelRunner("meta-llama/Llama-2-7b-chat-hf")
 instruct_output = instruct_model("Tell me how to train my dog to sit")
 print("Instruction-tuned output (Llama 2): ", instruct_output)
 
-print(separator(80))
+print(separator(count=80))
 
 # Try Smaller Models
 tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-70m")
@@ -131,19 +131,19 @@ finetuning_dataset_path = "lamini/lamini_docs"
 finetuning_dataset = load_dataset(finetuning_dataset_path)
 print(finetuning_dataset)
 
-print(separator(80))
+print(separator(count=80))
 
 test_sample = finetuning_dataset["test"][0]
 print(test_sample)
 
 print(inference(test_sample["question"], model, tokenizer))
 
-print(separator(80))
+print(separator(count=80))
 
 instruction_model = AutoModelForCausalLM.from_pretrained("lamini/lamini_docs_finetuned")
 print(inference(test_sample["question"], instruction_model, tokenizer))
 
-print(separator(80))
+print(separator(count=80))
 
 ###
 # Pssst! If you were curious how to upload your own dataset to Huggingface
